@@ -1,35 +1,34 @@
 <!DOCTYPE html>
-<html lang="pt-br">
-
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tela de Login</title>
-    <link rel="stylesheet" href="login.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <title>Redefinir Senha</title>
+    <link rel="stylesheet" href="senha.css">
 </head>
-
 <body>
     <div class="container">
         <form>
-            <h1>Entrar na Plataforma</h1>
+            <h1>Redefinir Senha</h1>
             <div class="input-container">
                 <input placeholder="Email" type="email" required>
-                <img width="20" height=20" src="https://img.icons8.com/ios-filled/50/FFFFFF/user.png" alt="user"/>
+                <img width="20" height="20" src="https://img.icons8.com/ios-filled/50/FFFFFF/user.png" alt="user"/>
             </div>
 
             <div class="input-container">
                 <input placeholder="Senha" type="password" required>
                 <img width="20" height="20" src="https://img.icons8.com/ios-filled/50/FFFFFF/lock-2.png" alt="lock-2"/>
-                <a href="senha.html">Esqueci minha senha</a>
             </div>
-
-            <a href="index.html"><button type="button"class="submit-button">Entrar</button></a>
+            <div class="input-container">
+                <input placeholder="Confirmar Senha" type="password" required>
+                <img width="20" height="20" src="https://img.icons8.com/ios-filled/50/FFFFFF/lock-2.png" alt="lock-2"/>
+            </div>
+            
+            <button type="submit"class="submit-button">Mudar Senha</button>
 
             <div class="register-link">
                 <div class="register-link">
-                    <p> Não tem uma conta? <a href="registro.html">Registre-se</a> </p>
+                    <p> Já tem uma conta? <a href="login.html">Entrar</a> </p>
                 </div>
             </div>
         </form>

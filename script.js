@@ -5,28 +5,59 @@ const listaCompleta = document.querySelector(".list-tasks");
 let minhaListaDeItens = [];
 
 function adicionarNovaTarefa() {
-    minhaListaDeItens.push(input.value) 
-    
-    input.value="";
+    if (input.value.trim() === "") {
+        alert("Digite uma tarefa antes de adicionar.");
+        return;
+    }
 
+    minhaListaDeItens.push({
+        tarefa: input.value,
+        concluida: false
+    });
+
+    input.value = ""; 
+    
     mostrarTarefas();
+    
 }
 
 function mostrarTarefas() {
     let novaLi = "";
 
-    minhaListaDeItens.forEach((tarefa) => {
+    minhaListaDeItens.forEach((item, index) => {
         novaLi += `
-            <li class="task">
-                <img src="./img/check.png" alt="check-na-tarefa">
-                <p> ${tarefa} </p>
-                <img src="./img/trash.png" alt="tarefa-para-o-lixo">
+            <li class="task ${item.concluida ? "done" : ""}">
+                <img src="./img/check.png" alt="check-na-tarefa" onclick="concluirTarefa(${index})">
+                <p> ${item.tarefa} </p>
+                <img src="./img/trash.png" alt="tarefa-para-o-lixo" onclick="deletarItem(${index})">
             </li>
         `;
     });
 
     listaCompleta.innerHTML = novaLi;
-
+    localStorage.setItem("lista", JSON.stringify(minhaListaDeItens));
 }
+
+function concluirTarefa(index) {
+    minhaListaDeItens[index].concluida = !minhaListaDeItens[index].concluida;
+    
+    mostrarTarefas();
+}
+
+function deletarItem(index) {
+    minhaListaDeItens.splice(index, 1);
+    
+    mostrarTarefas();
+}
+
+function recarregarTarefas() {
+    const tarefasLocalStorage = localStorage.getItem("lista");
+
+    minhaListaDeItens = tarefasLocalStorage ? JSON.parse(tarefasLocalStorage) || [] : [];
+
+    mostrarTarefas();
+}
+
+recarregarTarefas();
 
 button.addEventListener("click", adicionarNovaTarefa);
