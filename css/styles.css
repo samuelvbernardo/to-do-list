@@ -10,13 +10,13 @@
 }
 
 body {
-    background-color: #1f24237c;
+    background-color: #92a09e7c;
 }
 
 .container {
-    background-color: #609C99;
+    background-color: rgb(14, 46, 73);
     max-width: 800px;
-    width: 80vw;
+    width: 50vw;
     border-radius: 5px;
     padding: 10px;
     margin: 100px auto 100px;
@@ -24,8 +24,23 @@ body {
     position: relative;
 }
 
+.task-input-container{
+    background-color: rgb(14, 46, 73);
+    height: 160px;
+    position: sticky;
+    top: -1px;
+}
+
+.title {
+    font-family: "Kaushan Script";
+    font-size: 3em;
+    color: white;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
 .input-task {
-    background-color: lightgray;
+    background-color: white;
     border: none;
     font-family: "Passion One";
     font-weight: bold;
@@ -34,14 +49,12 @@ body {
     height: 50px;
     padding-left: 10px;
     border-radius: 10px;
-    position: sticky;
-    top: -1px;
 }
 
 .button-add-task {
-    background-color: lightgray;
-    color: rgb(14, 73, 50);
-    font-size: 1.3em;
+    background-color: white;
+    color: rgb(14, 46, 73);
+    font-size: 1.2em;
     font-family: "Passion One";
     font-weight: normal;
     text-align: center;
@@ -72,11 +85,12 @@ body {
 }
 
 .task {
-    background-color: #505C5B;
+    background-color: #302c2c;
     color: white;
     font-family: "Sriracha";
     font-weight: normal;
     height: 50px;
+    width: 100%;
     margin-bottom: 20px;
     padding: 0 15px;
     display: flex;
@@ -87,11 +101,62 @@ body {
     box-shadow: 1px 4px 10px rgba(0, 0, 0, 0.2);
 }
 
-img {
-    height: 25px;
-}
-
 .done {
     background-color: #1f2423;
-    text-decoration: line-through;
+}
+
+.fa-solid {
+    color: white;
+    font-size: 1.5em;
+    margin-right: 10px;
+}
+
+@media (max-width: 950px) {
+    .container {
+        width: 80vw;
+    }
+    .input-task {
+        width: 50%;
+        font-size: 1.2em;
+    }
+
+    .button-add-task {
+        width: 30%;
+        font-size: 1.2em;
+    }
+
+    
+}
+
+@media (max-width: 650px) {
+    .container {
+        width: 90vw;
+    }
+    .input-task {
+        width: 50%;
+        font-size: 1em;
+    }
+
+    .button-add-task {
+        width: 30%;
+        font-size: 1em;
+    }
+
+}
+
+@media (max-width: 370px) {
+    .container {
+        width: 100vw;
+    }
+    .input-task {
+        width: 50%;
+    }
+
+    .button-add-task {
+        width: 30%;
+    }
+
+    .task {
+        font-size: 0.8em;
+    }
 }
